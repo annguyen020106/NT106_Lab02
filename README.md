@@ -13,16 +13,12 @@
 - Giao diện cho phép chọn bài tập → chuyển sang màn hình bài tương ứng.  
 - Tất cả bài đều thuộc cùng một **Project WinForms duy nhất**.
 
----
-
 ### Bài 01 – Ghi và Đọc file
 - Đọc nội dung file `input1.txt` → hiển thị lên `RichTextBox`.  
 - Chuyển toàn bộ ký tự thành **in hoa** → ghi xuống file `output1.txt`.  
 - **Gợi ý:**  
   - Dùng `ReadToEnd()` để đọc toàn bộ nội dung.  
   - Dùng `StreamWriter` để ghi file.  
-
----
 
 ### Bài 02 – Đọc thông tin một file .txt
 - Hiển thị các thông tin:  
@@ -33,15 +29,11 @@
   - Lấy tên file: `ofd.SafeFileName`.  
   - Lấy đường dẫn: `fs.Name`.
 
----
-
 ### Bài 03 – Đọc và Ghi file và tính toán
 - Đọc file `input3.txt` gồm các phép toán (cộng, trừ, nhân, chia, ngoặc). VD: 1 + 2 + 3 + 4  
 - Tính kết quả từng dòng → ghi ra `output3.txt` theo dạng:  "1 + 2 + 3 + 4 = 10"
 - **Lưu ý:** Không dùng `DataTable.Compute`.  
 - **Yêu cầu:** Tự xây dựng parser để xử lý biểu thức.
-
----
 
 ### Bài 04 – Đọc và Ghi file Sinh viên (JsonSerializer)
 - Nhập danh sách sinh viên gồm:  
@@ -55,16 +47,12 @@
 - Dùng `JsonSerializer` thay cho `BinaryFormatter`.  
 - Có thể thêm tính năng phân trang danh sách.
 
----
-
 ### Bài 05 – Quản lý phòng vé (phiên bản 2)
 - Đọc file `input5.txt` theo cấu trúc.  
 - Quản lý thông tin phòng vé, thống kê doanh thu → ghi `output5.txt` gồm:  
 - Tên phim, số vé bán, vé tồn, tỉ lệ bán, doanh thu, xếp hạng doanh thu.  
 - **Gợi ý:**  
 - Thêm `ProgressBar` khi xuất file để hiển thị tiến độ.
-
----
 
 ### Bài 06 – Hôm nay ăn gì? (phiên bản 2)
 - Lưu trữ dữ liệu món ăn và người dùng bằng **SQLite**.  
@@ -74,8 +62,6 @@
 - Bảng `MonAn(IDMA, TenMonAn, HinhAnh, IDNCC)`  
 - Bảng `NguoiDung(IDNCC, HoVaTen, QuyenHan)`  
 - Dùng `ListView` hoặc `TreeView` để hiển thị.
-
----
 
 ### Bài 07 – Duyệt thư mục
 - Ứng dụng duyệt tất cả file và folder trong máy tính.  
