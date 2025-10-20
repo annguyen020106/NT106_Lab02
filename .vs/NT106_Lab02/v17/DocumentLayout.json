@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D08220BB-0B3C-4EDC-B8F5-EC21546B9484}|NT106_Lab02\\NT106_Lab02.csproj|d:\\uit_t\u00E0i li\u1EC7u_\u0026_b\u00E0i t\u1EADp\\nt106_l\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\th\\lab02\\nt106_lab02\\nt106_lab02\\lab02_bai04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D08220BB-0B3C-4EDC-B8F5-EC21546B9484}|NT106_Lab02\\NT106_Lab02.csproj|solutionrelative:nt106_lab02\\lab02_bai04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D08220BB-0B3C-4EDC-B8F5-EC21546B9484}|NT106_Lab02\\NT106_Lab02.csproj|d:\\uit_t\u00E0i li\u1EC7u_\u0026_b\u00E0i t\u1EADp\\nt106_l\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\th\\lab02\\nt106_lab02\\nt106_lab02\\lab02_bai04.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D08220BB-0B3C-4EDC-B8F5-EC21546B9484}|NT106_Lab02\\NT106_Lab02.csproj|solutionrelative:nt106_lab02\\lab02_bai04.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D08220BB-0B3C-4EDC-B8F5-EC21546B9484}|NT106_Lab02\\NT106_Lab02.csproj|d:\\uit_t\u00E0i li\u1EC7u_\u0026_b\u00E0i t\u1EADp\\nt106_l\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\th\\lab02\\nt106_lab02\\nt106_lab02\\lab02_bai04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D08220BB-0B3C-4EDC-B8F5-EC21546B9484}|NT106_Lab02\\NT106_Lab02.csproj|solutionrelative:nt106_lab02\\lab02_bai04.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lab02_Bai04.Designer.cs",
+              "DocumentMoniker": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\NT106_Lab02\\Lab02_Bai04.Designer.cs",
+              "RelativeDocumentMoniker": "NT106_Lab02\\Lab02_Bai04.Designer.cs",
+              "ToolTip": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\NT106_Lab02\\Lab02_Bai04.Designer.cs",
+              "RelativeToolTip": "NT106_Lab02\\Lab02_Bai04.Designer.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:49:07.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Lab02_Bai04.cs [Design]",
+              "DocumentMoniker": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\NT106_Lab02\\Lab02_Bai04.cs",
+              "RelativeDocumentMoniker": "NT106_Lab02\\Lab02_Bai04.cs",
+              "ToolTip": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\NT106_Lab02\\Lab02_Bai04.cs [Design]",
+              "RelativeToolTip": "NT106_Lab02\\Lab02_Bai04.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:35:03.402Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lab02_Bai04.cs",
+              "DocumentMoniker": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\NT106_Lab02\\Lab02_Bai04.cs",
+              "RelativeDocumentMoniker": "NT106_Lab02\\Lab02_Bai04.cs",
+              "ToolTip": "D:\\UIT_T\u00E0i li\u1EC7u_\u0026_B\u00E0i t\u1EADp\\NT106_L\u1EADp tr\u00ECnh m\u1EA1ng c\u0103n b\u1EA3n\\TH\\Lab02\\NT106_Lab02\\NT106_Lab02\\Lab02_Bai04.cs",
+              "RelativeToolTip": "NT106_Lab02\\Lab02_Bai04.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAAAEgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:07:39.297Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace NT106_Lab02
+{
+    public partial class Lab02_Bai01 : Form
+    {
+        private string inputFilePath;
+        private string outputFilePath;
+
+        public Lab02_Bai01()
+        {
+            InitializeComponent();
+            InitializeFilePaths();
+        }
+
+        public Lab02_Bai01(Point location, Size size)
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = location;
+            this.Size = size;
+            InitializeFilePaths();
+        }
+
+        private void InitializeFilePaths()
+        {
+            inputFilePath = Path.Combine(Application.StartupPath, "input1.txt");
+            outputFilePath = Path.Combine(Application.StartupPath, "output1.txt");
+            
+            // Create input file if it doesn't exist
+            if (!File.Exists(inputFilePath))
+            {
+                try
+                {
+                    File.WriteAllText(inputFilePath, "Hello World!\nThis is a sample input file.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Không thể tạo file input1.txt: {ex.Message}");
+                }
+            }
+        }
+
+        private void Button_Read_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!File.Exists(inputFilePath))
+                {
+                    MessageBox.Show($"Không tìm thấy file: {inputFilePath}");
+                    return;
+                }
+
+                string input = File.ReadAllText(inputFilePath);
+                TextBox_NoiDung.Text = input;
+                MessageBox.Show("Đã đọc file thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi đọc file: {ex.Message}");
+            }
+        }
+
+        private void Button_Write_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string input = TextBox_NoiDung.Text;
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    MessageBox.Show("Không có nội dung để ghi!");
+                    return;
+                }
+
+                File.WriteAllText(outputFilePath, input.ToUpper());
+                MessageBox.Show($"Đã ghi file {outputFilePath} thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi ghi file: {ex.Message}");
+            }
+        }
+    }
+}

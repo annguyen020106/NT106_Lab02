@@ -1,0 +1,15 @@
+2. Bài 02 – Đọc thông tin một file .txt 
+Viết chương trình đọc file và hiển thị các thông tin sau: 
+- Tên file 
+- Kích thước file 
+- Đường dẫn Url 
+- Số dòng, số từ, số ký tự  
+- Hiển thị nội dung của file 
+
+Giao diện minh họa. 
+
+Gợi ý: bắt sự kiện click cho nút ĐỌC FILE, sử dụng lớp StreamReader 
+- Có thể sử dụng .SafeFileName Property của OpenFileDialog để lấy tên file  
+VD: name = ofd.SafeFileName.ToString(); 
+- Có thể sử dụng .Name Property của FileStream để lấy đường dẫn 
+VD: url = fs.Name.ToString(); 

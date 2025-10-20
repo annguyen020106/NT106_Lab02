@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace NT106_Lab02
+{
+    public partial class Lab02_Bai01 : Form
+    {
+        public Lab02_Bai01()
+        {
+            InitializeComponent();
+        }
+        public Lab02_Bai01(Point location, Size size)
+        {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = location;
+            this.Size = size;
+        }
+        private void Button_Read_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!File.Exists("input1.txt"))
+                {
+                    MessageBox.Show("Không tìm thấy file input1.txt!");
+                    return;
+                }
+
+                string input = File.ReadAllText("input1.txt");
+                TextBox_NoiDung.Text = input;
+                MessageBox.Show("Đã đọc file thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi đọc file: " + ex.Message);
+            }
+        }
+
+        private void Button_Write_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string input = TextBox_NoiDung.Text;
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    MessageBox.Show("Không có nội dung để ghi!");
+                    return;
+                }
+
+                File.WriteAllText("output1.txt", input.ToUpper());
+                MessageBox.Show("Đã ghi file output1.txt thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi ghi file: " + ex.Message);
+            }
+        }
+    }
+}
