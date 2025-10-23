@@ -44,7 +44,6 @@
             Button_Exit = new Button();
             Button_Read = new Button();
             Button_Add = new Button();
-            ListBox_Content = new ListBox();
             TextBox_Out_Name = new TextBox();
             Label_Out_Average = new Label();
             Label_Out_Course3 = new Label();
@@ -63,6 +62,8 @@
             TextBox_Out_Course1 = new TextBox();
             TextBox_Out_Phone = new TextBox();
             TextBox_Out_MSSV = new TextBox();
+            Button_Delete = new Button();
+            TextBox_Content = new TextBox();
             SuspendLayout();
             // 
             // Label_Name
@@ -178,7 +179,7 @@
             Label_Content.AutoSize = true;
             Label_Content.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             Label_Content.ForeColor = Color.CornflowerBlue;
-            Label_Content.Location = new Point(328, 14);
+            Label_Content.Location = new Point(338, 19);
             Label_Content.Name = "Label_Content";
             Label_Content.Size = new Size(96, 30);
             Label_Content.TabIndex = 15;
@@ -212,21 +213,13 @@
             // 
             Button_Add.BackColor = Color.CornflowerBlue;
             Button_Add.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            Button_Add.Location = new Point(120, 350);
+            Button_Add.Location = new Point(120, 349);
             Button_Add.Name = "Button_Add";
             Button_Add.Size = new Size(190, 33);
             Button_Add.TabIndex = 18;
             Button_Add.Text = "Add";
             Button_Add.UseVisualStyleBackColor = false;
             Button_Add.Click += Button_Add_Click;
-            // 
-            // ListBox_Content
-            // 
-            ListBox_Content.FormattingEnabled = true;
-            ListBox_Content.Location = new Point(328, 63);
-            ListBox_Content.Name = "ListBox_Content";
-            ListBox_Content.Size = new Size(278, 364);
-            ListBox_Content.TabIndex = 19;
             // 
             // TextBox_Out_Name
             // 
@@ -318,7 +311,7 @@
             Button_Back.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Button_Back.Location = new Point(675, 350);
             Button_Back.Name = "Button_Back";
-            Button_Back.Size = new Size(83, 33);
+            Button_Back.Size = new Size(57, 33);
             Button_Back.TabIndex = 34;
             Button_Back.Text = "Back";
             Button_Back.UseVisualStyleBackColor = false;
@@ -328,9 +321,9 @@
             // 
             Button_Next.BackColor = Color.CornflowerBlue;
             Button_Next.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            Button_Next.Location = new Point(833, 350);
+            Button_Next.Location = new Point(807, 350);
             Button_Next.Name = "Button_Next";
-            Button_Next.Size = new Size(83, 33);
+            Button_Next.Size = new Size(57, 33);
             Button_Next.TabIndex = 35;
             Button_Next.Text = "Next";
             Button_Next.UseVisualStyleBackColor = false;
@@ -338,11 +331,15 @@
             // 
             // TextBox_Page
             // 
-            TextBox_Page.Location = new Point(764, 350);
+            TextBox_Page.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            TextBox_Page.ForeColor = Color.CornflowerBlue;
+            TextBox_Page.Location = new Point(738, 350);
             TextBox_Page.Multiline = true;
             TextBox_Page.Name = "TextBox_Page";
             TextBox_Page.Size = new Size(63, 33);
             TextBox_Page.TabIndex = 36;
+            TextBox_Page.Text = "0/0";
+            TextBox_Page.TextAlign = HorizontalAlignment.Center;
             // 
             // Button_Write
             // 
@@ -398,11 +395,35 @@
             TextBox_Out_MSSV.Size = new Size(190, 27);
             TextBox_Out_MSSV.TabIndex = 38;
             // 
+            // Button_Delete
+            // 
+            Button_Delete.BackColor = Color.CornflowerBlue;
+            Button_Delete.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            Button_Delete.Location = new Point(883, 350);
+            Button_Delete.Name = "Button_Delete";
+            Button_Delete.Size = new Size(70, 33);
+            Button_Delete.TabIndex = 44;
+            Button_Delete.Text = "Delete";
+            Button_Delete.UseVisualStyleBackColor = false;
+            Button_Delete.Click += Button_Delete_Click;
+            // 
+            // TextBox_Content
+            // 
+            TextBox_Content.Location = new Point(338, 62);
+            TextBox_Content.Multiline = true;
+            TextBox_Content.Name = "TextBox_Content";
+            TextBox_Content.ReadOnly = true;
+            TextBox_Content.ScrollBars = ScrollBars.Vertical;
+            TextBox_Content.Size = new Size(310, 321);
+            TextBox_Content.TabIndex = 45;
+            // 
             // Lab02_Bai04
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(979, 444);
+            Controls.Add(TextBox_Content);
+            Controls.Add(Button_Delete);
             Controls.Add(TextBox_Out_Average);
             Controls.Add(TextBox_Out_Course3);
             Controls.Add(TextBox_Out_Course2);
@@ -421,7 +442,6 @@
             Controls.Add(Label_Out_Phone);
             Controls.Add(Label_Out_MSSV);
             Controls.Add(Label_Out_Name);
-            Controls.Add(ListBox_Content);
             Controls.Add(Button_Add);
             Controls.Add(Button_Exit);
             Controls.Add(Button_Read);
@@ -464,7 +484,6 @@
         private Button Button_Exit;
         private Button Button_Read;
         private Button Button_Add;
-        private ListBox ListBox_Content;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
@@ -489,5 +508,7 @@
         private TextBox TextBox_Out_Course1;
         private TextBox TextBox_Out_Phone;
         private TextBox TextBox_Out_MSSV;
+        private Button Button_Delete;
+        private TextBox TextBox_Content;
     }
 }

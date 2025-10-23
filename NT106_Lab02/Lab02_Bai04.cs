@@ -1,37 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace NT106_Lab02
 {
     public partial class Lab02_Bai04 : Form
     {
-        private readonly string inputPath;
-        private readonly string outputPath;
+        [Serializable]
+        public class SinhVien
+        {
+            public string Name { get; set; }
+            public string MSSV { get; set; }
+            public string Phone { get; set; }
+            public double Course1 { get; set; }
+            public double Course2 { get; set; }
+            public double Course3 { get; set; }
+            public double Average { get; set; }
+
+            public void CalcAverage()
+            {
+                Average = (Course1 + Course2 + Course3) / 3.0;
+            }
+
+            public override string ToString()
+            {
+                return $"{Name} - {MSSV} - {Phone} - {Course1} - {Course2} - {Course3} - {Average:F2}";
+            }
+        }
+
         private List<SinhVien> danhSach = new List<SinhVien>();
         private int currentIndex = -1;
+        private readonly string folder = Application.StartupPath;
+        private readonly string inputFile;
+        private readonly string outputFile;
 
         public Lab02_Bai04()
         {
             InitializeComponent();
-            string folder = Application.StartupPath;
-            inputPath = Path.Combine(folder, "input4.txt");
-            outputPath = Path.Combine(folder, "output4.txt");
+            inputFile = Path.Combine(folder, "input4.txt");
+            outputFile = Path.Combine(folder, "output4.txt");
         }
-
-        public Lab02_Bai04(Point location, Size size)
+        public Lab02_Bai04(Point location, Size size) : this()
         {
-            InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = location;
-            this.Size = size;
-
-            string folder = Application.StartupPath;
-            inputPath = Path.Combine(folder, "input4.txt");
-            outputPath = Path.Combine(folder, "output4.txt");
+            //this.Size = size;
         }
+
         private void ClearInput()
         {
             TextBox_Name.Clear();
@@ -41,182 +60,256 @@ namespace NT106_Lab02
             TextBox_Course2.Clear();
             TextBox_Course3.Clear();
         }
+        // Kiểm tra
+        private bool IsValidSinhVien(out string error)
+        {
+            error = "";
+            if (string.IsNullOrWhiteSpace(TextBox_Name.Text) ||
+                string.IsNullOrWhiteSpace(TextBox_MSSV.Text) ||
+                string.IsNullOrWhiteSpace(TextBox_Phone.Text) ||
+                string.IsNullOrWhiteSpace(TextBox_Course1.Text) ||
+                string.IsNullOrWhiteSpace(TextBox_Course2.Text) ||
+                string.IsNullOrWhiteSpace(TextBox_Course3.Text))
+            {
+                error = "Vui lòng nhập đầy đủ thông tin sinh viên!";
+                return false;
+            }
+
+            if (!Regex.IsMatch(TextBox_Name.Text.Trim(), @"^[\p{L}\s]+$"))
+            {
+                error = "Tên chỉ được chứa chữ cái và khoảng trắng!";
+                return false;
+            }
+
+            if (!Regex.IsMatch(TextBox_MSSV.Text.Trim(), @"^\d{8}$"))
+            {
+                error = "MSSV phải gồm đúng 8 chữ số!";
+                return false;
+            }
+
+            if (!Regex.IsMatch(TextBox_Phone.Text.Trim(), @"^0\d{9}$"))
+            {
+                error = "SĐT phải bắt đầu bằng 0 và đủ 10 chữ số!";
+                return false;
+            }
+
+            if (!float.TryParse(TextBox_Course1.Text, out float c1) || c1 < 0 || c1 > 10 ||
+                !float.TryParse(TextBox_Course2.Text, out float c2) || c2 < 0 || c2 > 10 ||
+                !float.TryParse(TextBox_Course3.Text, out float c3) || c3 < 0 || c3 > 10)
+            {
+                error = "Điểm phải là số thực từ 0 đến 10!";
+                return false;
+            }
+
+            return true;
+        }
+        // Nhấn Exit
+        private void Button_Exit_Click(object sender, EventArgs e)
+        {
+            Home home = new Home(this.Location, this.Size);
+            home.Show();
+            this.Hide();
+        }
+        // Nhấn Add
         private void Button_Add_Click(object sender, EventArgs e)
         {
-            string name = TextBox_Name.Text.Trim();
-            string mssv = TextBox_MSSV.Text.Trim();
-            string phone = TextBox_Phone.Text.Trim();
-
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(mssv))
+            try
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Tên và MSSV!");
-                return;
-            }
+                if (!IsValidSinhVien(out string error))
+                {
+                    MessageBox.Show(error, "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            if (!double.TryParse(TextBox_Course1.Text, out double c1) ||
-                !double.TryParse(TextBox_Course2.Text, out double c2) ||
-                !double.TryParse(TextBox_Course3.Text, out double c3))
+                SinhVien st = new SinhVien
+                {
+                    Name = TextBox_Name.Text.Trim(),
+                    MSSV = TextBox_MSSV.Text.Trim(),
+                    Phone = TextBox_Phone.Text.Trim(),
+                    Course1 = double.Parse(TextBox_Course1.Text),
+                    Course2 = double.Parse(TextBox_Course2.Text),
+                    Course3 = double.Parse(TextBox_Course3.Text)
+                };
+                st.CalcAverage();
+
+                danhSach.Add(st);
+                //TextBox_Average.Text = st.Average.ToString("F2");
+                UpdateContentBox();
+
+                MessageBox.Show("Đã thêm sinh viên thành công!");
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Điểm nhập không hợp lệ!");
-                return;
+                MessageBox.Show($"Lỗi khi thêm: {ex.Message}");
             }
-
-            double avg = Math.Round((c1 + c2 + c3) / 3, 2);
-
-            SinhVien sv = new SinhVien(name, mssv, phone, c1, c2, c3, avg);
-
-            danhSach.Add(sv);
-
-            ListBox_Content.Items.Add(sv.ToString());
-
-            ClearInput();
         }
-
+        // Write
         private void Button_Write_Click(object sender, EventArgs e)
         {
             try
             {
                 if (danhSach.Count == 0)
                 {
-                    MessageBox.Show("Chưa có sinh viên nào để ghi!");
+                    MessageBox.Show("Danh sách trống, không ghi file được!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                using (StreamWriter sw = new StreamWriter(inputPath))
+                using (StreamWriter sw = new StreamWriter(inputFile))
                 {
                     foreach (var sv in danhSach)
-                        sw.WriteLine($"{sv.Name};{sv.MSSV};{sv.Phone};{sv.Course1};{sv.Course2};{sv.Course3};{sv.Average}");
+                    {
+                        sw.WriteLine($"{sv.Name}");
+                        sw.WriteLine($"{sv.MSSV}");
+                        sw.WriteLine($"{sv.Phone}");
+                        sw.WriteLine($"{sv.Course1}");
+                        sw.WriteLine($"{sv.Course2}");
+                        sw.WriteLine($"{sv.Course3}");
+                        sw.WriteLine($"{sv.Average:F2}");
+                        sw.WriteLine(); // dòng trống giữa 2 sinh viên
+                    }
                 }
-
-                double avgClass = danhSach.Average(s => s.Average);
-                var max = danhSach.MaxBy(s => s.Average);
-                var min = danhSach.MinBy(s => s.Average);
-
-                using (StreamWriter sw = new StreamWriter(outputPath))
-                {
-                    sw.WriteLine($"Tổng số sinh viên: {danhSach.Count}");
-                    sw.WriteLine($"Điểm trung bình lớp: {avgClass:F2}");
-                    sw.WriteLine($"Cao nhất: {max.Name} ({max.Average})");
-                    sw.WriteLine($"Thấp nhất: {min.Name} ({min.Average})");
-                }
-
-                MessageBox.Show($"Đã lưu thành công:\n{inputPath}\nvà\n{outputPath}", "Thông báo");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi ghi file: " + ex.Message);
+                MessageBox.Show($"Lỗi khi ghi file: {ex.Message}");
             }
         }
-
+        // Nhấn Read
         private void Button_Read_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!File.Exists(inputPath))
+                if (!File.Exists(inputFile))
                 {
                     MessageBox.Show("Không tìm thấy file input4.txt!");
                     return;
                 }
 
                 danhSach.Clear();
-                ListBox_Content.Items.Clear();
 
-                foreach (string line in File.ReadAllLines(inputPath))
+                using (StreamReader sr = new StreamReader(inputFile))
                 {
-                    string[] parts = line.Split(';');
-                    if (parts.Length >= 7)
+                    while (!sr.EndOfStream)
                     {
-                        danhSach.Add(new SinhVien(
-                            parts[0], parts[1], parts[2],
-                            double.Parse(parts[3]),
-                            double.Parse(parts[4]),
-                            double.Parse(parts[5]),
-                            double.Parse(parts[6])
-                        ));
+                        string name = sr.ReadLine();
+                        if (string.IsNullOrWhiteSpace(name)) continue;
+
+                        string mssv = sr.ReadLine();
+                        string phone = sr.ReadLine();
+                        double c1 = double.Parse(sr.ReadLine());
+                        double c2 = double.Parse(sr.ReadLine());
+                        double c3 = double.Parse(sr.ReadLine());
+                        double avg = double.Parse(sr.ReadLine());
+
+                        danhSach.Add(new SinhVien
+                        {
+                            Name = name,
+                            MSSV = mssv,
+                            Phone = phone,
+                            Course1 = c1,
+                            Course2 = c2,
+                            Course3 = c3,
+                            Average = avg
+                        });
+
+                        sr.ReadLine(); // bỏ qua dòng trống giữa 2 sinh viên
                     }
                 }
 
-                foreach (var sv in danhSach)
-                    ListBox_Content.Items.Add(sv.ToString());
-
-                MessageBox.Show("Đọc file thành công!", "Thông báo");
-
+                currentIndex = 0;
+                UpdateContentBox();
                 if (danhSach.Count > 0)
-                {
-                    currentIndex = 0;
-                    ShowStudent(danhSach[currentIndex]);
-                }
+                    ShowSinhVien(currentIndex);
+
+                MessageBox.Show("Đọc file input4.txt thành công!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi đọc file: " + ex.Message);
+                MessageBox.Show($"Lỗi khi đọc file: {ex.Message}");
             }
         }
-
+        // Nhấn Back
         private void Button_Back_Click(object sender, EventArgs e)
         {
             if (danhSach.Count == 0) return;
-            if (currentIndex > 0)
-            {
-                currentIndex--;
-                ShowStudent(danhSach[currentIndex]);
-            }
+            currentIndex = (currentIndex - 1 + danhSach.Count) % danhSach.Count;
+            ShowSinhVien(currentIndex);
         }
-
+        // Nhấn Next
         private void Button_Next_Click(object sender, EventArgs e)
         {
             if (danhSach.Count == 0) return;
-            if (currentIndex < danhSach.Count - 1)
+            currentIndex = (currentIndex + 1) % danhSach.Count;
+            ShowSinhVien(currentIndex);
+        }
+        // Nhấn Delete
+        private void Button_Delete_Click(object sender, EventArgs e)
+        {
+            if (danhSach.Count == 0)
             {
-                currentIndex++;
-                ShowStudent(danhSach[currentIndex]);
+                MessageBox.Show("Danh sách trống!");
+                return;
+            }
+            danhSach.RemoveAt(currentIndex);
+
+            if (danhSach.Count == 0)
+            {
+                currentIndex = -1;
+                ClearOutput();
+            }
+            else
+            {
+                if (currentIndex >= danhSach.Count)
+                    currentIndex = danhSach.Count - 1;
+
+                ShowSinhVien(currentIndex);
+            }
+
+            UpdateContentBox();
+            MessageBox.Show("Đã xóa sinh viên hiện tại!");
+        }
+        
+        private void ShowSinhVien(int index)
+        {
+            if (index < 0 || index >= danhSach.Count) return;
+            var s = danhSach[index];
+            TextBox_Out_Name.Text = s.Name;
+            TextBox_Out_MSSV.Text = s.MSSV;
+            TextBox_Out_Phone.Text = s.Phone;
+            TextBox_Out_Course1.Text = s.Course1.ToString();
+            TextBox_Out_Course2.Text = s.Course2.ToString();
+            TextBox_Out_Course3.Text = s.Course3.ToString();
+            TextBox_Out_Average.Text = s.Average.ToString("F2");
+            TextBox_Page.Text = $"{index + 1}/{danhSach.Count}";
+        }
+
+        private void UpdateContentBox()
+        {
+            TextBox_Content.Clear();
+            foreach (var sv in danhSach)
+            {
+                TextBox_Content.AppendText(
+                    $"{sv.Name}\r\n" +
+                    $"{sv.MSSV}\r\n" +
+                    $"{sv.Phone}\r\n" +
+                    $"{sv.Course1}\r\n" +
+                    $"{sv.Course2}\r\n" +
+                    $"{sv.Course3}\r\n" +
+                    $"{sv.Average:F2}\r\n\r\n"
+                );
             }
         }
 
-        private void ShowStudent(SinhVien sv)
+        private void ClearOutput()
         {
-            TextBox_Out_Name.Text = sv.Name;
-            TextBox_Out_MSSV.Text = sv.MSSV;
-            TextBox_Out_Phone.Text = sv.Phone;
-            TextBox_Out_Course1.Text = sv.Course1.ToString();
-            TextBox_Out_Course2.Text = sv.Course2.ToString();
-            TextBox_Out_Course3.Text = sv.Course3.ToString();
-            TextBox_Out_Average.Text = sv.Average.ToString("F2");
-            TextBox_Page.Text = $"{currentIndex + 1}/{danhSach.Count}";
-        }
-
-        private void Button_Exit_Click(object sender, EventArgs e)
-        {
-            Home BT = new Home(this.Location, this.Size);
-            BT.Show();
-            this.Hide();
-        }
-    }
-
-    public class SinhVien
-    {
-        public string Name { get; set; }
-        public string MSSV { get; set; }
-        public string Phone { get; set; }
-        public double Course1 { get; set; }
-        public double Course2 { get; set; }
-        public double Course3 { get; set; }
-        public double Average { get; set; }
-
-        public SinhVien(string name, string mssv, string phone, double c1, double c2, double c3, double avg)
-        {
-            Name = name;
-            MSSV = mssv;
-            Phone = phone;
-            Course1 = c1;
-            Course2 = c2;
-            Course3 = c3;
-            Average = avg;
-        }
-
-        public override string ToString()
-        {
-            return $"{MSSV} - {Name} ({Average:F2})";
+            TextBox_Out_Name.Text = "";
+            TextBox_Out_MSSV.Text = "";
+            TextBox_Out_Phone.Text = "";
+            TextBox_Out_Course1.Text = "";
+            TextBox_Out_Course2.Text = "";
+            TextBox_Out_Course3.Text = "";
+            TextBox_Out_Average.Text = "";
+            TextBox_Page.Text = "0/0";
         }
     }
 }

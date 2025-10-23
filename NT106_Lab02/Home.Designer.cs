@@ -132,6 +132,7 @@
             Button_NA.TabIndex = 7;
             Button_NA.Text = "MSSV - 24520054";
             Button_NA.UseVisualStyleBackColor = false;
+            Button_NA.Click += MSSV_24520054_Click;
             // 
             // Home
             // 

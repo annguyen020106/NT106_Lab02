@@ -1,8 +1,5 @@
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.exe
-D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.deps.json
-D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.runtimeconfig.json
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.dll
-D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.pdb
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.Home.resources
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.Lab02_Bai01.resources
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.Lab02_Bai02.resources
@@ -16,8 +13,13 @@ D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.AssemblyInfoInputs.cache
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.AssemblyInfo.cs
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.csproj.CoreCompileInputs.cache
+D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.sourcelink.json
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.dll
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\refint\NT106_Lab02.dll
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.pdb
+D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.deps.json
+D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.runtimeconfig.json
+D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\bin\Debug\net8.0-windows\NT106_Lab02.pdb
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.genruntimeconfig.cache
 D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\ref\NT106_Lab02.dll
+D:\UIT_Tài liệu_&_Bài tập\NT106_Lập trình mạng căn bản\TH\Lab02\NT106_Lab02\NT106_Lab02\obj\Debug\net8.0-windows\NT106_Lab02.Properties.Resources.resources

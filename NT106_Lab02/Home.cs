@@ -6,7 +6,6 @@ namespace NT106_Lab02
         {
             InitializeComponent();
         }
-
         public Home(Point location, Size size)
         {
             InitializeComponent();
@@ -62,6 +61,10 @@ namespace NT106_Lab02
             Lab02_Bai07 BT = new Lab02_Bai07(this.Location, this.Size);
             BT.Show();
             this.Hide();
+        }
+        private void MSSV_24520054_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
