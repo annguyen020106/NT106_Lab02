@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\UIT_Tài liệu_&_Bài tập\\NT106_Lập trình mạng căn bản\\TH\\Lab02\\NT106_Lab02\\Lab02\\Lab02.csproj": {}
+  },
+  "projects": {
+    "D:\\UIT_Tài liệu_&_Bài tập\\NT106_Lập trình mạng căn bản\\TH\\Lab02\\NT106_Lab02\\Lab02\\Lab02.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\UIT_Tài liệu_&_Bài tập\\NT106_Lập trình mạng căn bản\\TH\\Lab02\\NT106_Lab02\\Lab02\\Lab02.csproj",
+        "projectName": "Lab02",
+        "projectPath": "D:\\UIT_Tài liệu_&_Bài tập\\NT106_Lập trình mạng căn bản\\TH\\Lab02\\NT106_Lab02\\Lab02\\Lab02.csproj",
+        "packagesPath": "C:\\Users\\FPTShop\\.nuget\\packages\\",
+        "outputPath": "D:\\UIT_Tài liệu_&_Bài tập\\NT106_Lập trình mạng căn bản\\TH\\Lab02\\NT106_Lab02\\Lab02\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Visual studio 2022\\Shared components, tools, and SDKs\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\FPTShop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[2.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

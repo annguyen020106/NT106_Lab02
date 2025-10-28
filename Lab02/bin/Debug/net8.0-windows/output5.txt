@@ -1,0 +1,26 @@
+﻿THỐNG KÊ PHÒNG VÉ
+----------------------------------------
+Hạng 1: Đào, phở và piano
+  Vé bán: 4
+  Vé tồn: 41
+  Tỉ lệ bán: 8.89%
+  Doanh thu: 146,250 đ
+
+Hạng 2: Mai
+  Vé bán: 0
+  Vé tồn: 30
+  Tỉ lệ bán: 0.00%
+  Doanh thu: 0 đ
+
+Hạng 3: Gặp lại chị bầu
+  Vé bán: 0
+  Vé tồn: 15
+  Tỉ lệ bán: 0.00%
+  Doanh thu: 0 đ
+
+Hạng 4: Tarot
+  Vé bán: 0
+  Vé tồn: 15
+  Tỉ lệ bán: 0.00%
+  Doanh thu: 0 đ
+
